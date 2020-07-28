@@ -1,5 +1,6 @@
-package kata.babysitter.base;
+package kata.babysitter;
 
+import kata.babysitter.base.Babysitter;
 import kata.babysitter.exception.BabysitterException;
 
 import java.time.LocalDateTime;

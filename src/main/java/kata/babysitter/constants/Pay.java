@@ -1,4 +1,4 @@
-package kata.babysitter.base;
+package kata.babysitter.constants;
 
 public class Pay {
 

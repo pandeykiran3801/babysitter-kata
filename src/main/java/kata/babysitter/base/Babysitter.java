@@ -1,16 +1,15 @@
 package kata.babysitter.base;
 
+import kata.babysitter.constants.Pay;
 import kata.babysitter.exception.BabysitterException;
 
 import java.time.*;
-import java.util.Date;
 
 public class Babysitter {
 
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private LocalDateTime bedTime;
-    private LocalDateTime midnight;
 
     public Babysitter(LocalDateTime startTime, LocalDateTime endTime, LocalDateTime bedTime) throws BabysitterException {
         setStartTime(startTime);
