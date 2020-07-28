@@ -38,7 +38,7 @@ public class Babysitter {
     public double calculateHrs(LocalDateTime start, LocalDateTime end){
         Duration duration = Duration.between(start, end);
         long hours = duration.toHours();
-        double minutes = (duration.toMinutes() - (hours * 60))/60;
+        double minutes = (duration.toMinutes() - (hours * 60))/60.0;
         double total = hours+minutes;
         if(total < 0) return 0;
         return total;

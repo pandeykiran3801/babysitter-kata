@@ -25,6 +25,21 @@ public class BabySitterTest {
     }
 
     @Test
+    public void validateTotalPayWithDecimalHoursPositiveScenario() {
+        LocalDateTime startTime = LocalDateTime.of(2020, 07, 20,22,30);
+        LocalDateTime bedTime = LocalDateTime.of(startTime.toLocalDate(), LocalTime.of(23,0));
+        LocalDateTime endTime = LocalDateTime.of(startTime.toLocalDate().plusDays(1), LocalTime.of(2,0));
+        try {
+            Babysitter babysitter = new Babysitter(startTime, endTime, bedTime);
+            double pay = babysitter.calculateTotalPay();
+            Assert.assertEquals(pay, 46, "Pay did not match!");
+        } catch(BabysitterException e) {
+            Assert.assertFalse(false, "Invalid input data.");
+        }
+    }
+
+
+    @Test
     public void validateInvalidStartTimeScenario() {
         LocalDateTime startTime = LocalDateTime.of(2020, 07, 20,14,00);
         LocalDateTime bedTime = LocalDateTime.of(startTime.toLocalDate(), LocalTime.of(23,0));
